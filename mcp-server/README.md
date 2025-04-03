@@ -45,7 +45,9 @@ mcp-server
 ## Usage
 
 - The server exposes endpoints for running integration tests and retrieving results. 
-- You can access the API documentation to see available routes and their usage.
+- **Dashboard Testing Endpoints:**
+  - `POST /api/dashboard/run-tests`: Run dashboard tests.
+  - `GET /api/dashboard/test-results`: Retrieve dashboard test results.
 
 ## Contributing
 
