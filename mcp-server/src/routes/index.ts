@@ -1,12 +1,13 @@
 import { Router } from 'express';
-import TestController from '../controllers';
+import TestController from '../controllers/index';
 
 const router = Router();
 const testController = new TestController();
 
-export function setRoutes(app) {
-    app.use('/api/tests', router);
-    
-    router.post('/run', testController.runTest.bind(testController));
-    router.get('/results', testController.getTestResults.bind(testController));
-}
+// Define routes
+router.post('/dashboard/run-tests', testController.runDashboardTests);
+router.get('/dashboard/test-results', testController.getDashboardTestResults);
+
+export const setRoutes = (app) => {
+    app.use('/api', router);
+};
