@@ -1,0 +1,16 @@
+import express from 'express';
+import { setRoutes } from './routes/index';
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
+
+// Set up routes
+setRoutes(app);
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`MCP Server is running on http://localhost:${PORT}`);
+});
